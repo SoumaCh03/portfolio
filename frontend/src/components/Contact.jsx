@@ -44,17 +44,17 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        "service_eg6twms",
-        "template_uqgvpwd",
-        {
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          time: new Date().toLocaleString(),
-        },
-        "VS8g7YkZrxTROcQNl"
-      );
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            {
+              name: formData.name,
+              email: formData.email,
+              subject: formData.subject,
+              message: formData.message,
+              time: new Date().toLocaleString(),
+            },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
 
       alert("Thank you! Message sent successfully ✅");
 
