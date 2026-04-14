@@ -65,7 +65,12 @@ export default function About() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateColumns:
+            window.innerWidth <= 768
+              ? "1fr"
+              : window.innerWidth <= 1024
+              ? "repeat(2, 1fr)"
+              : "repeat(3, 1fr)",
           gap: "30px",
           maxWidth: "1200px",
           margin: "0 auto",

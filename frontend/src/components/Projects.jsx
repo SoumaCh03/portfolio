@@ -58,8 +58,11 @@ export default function Projects() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: "30px",
+          gridTemplateColumns:
+            window.innerWidth <= 768
+              ? "1fr"
+              : "repeat(auto-fit, minmax(320px, 1fr))",
+                    gap: "30px",
         }}
       >
         {projects.map((project, index) => (

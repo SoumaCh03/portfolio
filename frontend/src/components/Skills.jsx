@@ -108,7 +108,12 @@ export default function Skills() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateColumns:
+            window.innerWidth <= 768
+              ? "1fr"
+              : window.innerWidth <= 1024
+              ? "repeat(2, 1fr)"
+              : "repeat(3, 1fr)",
           gap: "30px",
         }}
       >
