@@ -25,22 +25,16 @@ body {
 }
 
 @keyframes blinkCursor {
-  0%,
-  50% {
-    opacity: 1;
-  }
-  51%,
-  100% {
-    opacity: 0;
-  }
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
-/* Hero smooth transition */
+/* Hero */
 .hero-title {
   transition: font-size 0.35s ease;
 }
 
-/* Navbar logo animation */
+/* Logo glow */
 @keyframes logoGlow {
   0% {
     opacity: 0;
@@ -58,14 +52,10 @@ body {
   animation: logoGlow 1s ease forwards;
 }
 
-/* Orbit rotation */
+/* Orbit */
 @keyframes spinSlow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* Hero image */
@@ -126,14 +116,14 @@ body {
   z-index: 10;
 }
 
-/* Hobbies section */
-
+/* Hobbies */
 .hobbies-scroll-container {
   display: flex;
   gap: 20px;
   overflow-x: auto;
   padding: 20px 0;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 .hobbies-scroll-container::-webkit-scrollbar {
@@ -182,7 +172,6 @@ body {
   transform: scale(1.2);
 }
 
-/* hobbies arrows */
 .hobbies-wrapper {
   position: relative;
   display: flex;
@@ -210,184 +199,10 @@ body {
   transform: scale(1.08);
 }
 
-.left-btn {
-  left: -25px;
-}
+.left-btn { left: -25px; }
+.right-btn { right: -25px; }
 
-.right-btn {
-  right: -25px;
-}
-
-
-/* ============================= */
-/* MOBILE + TABLET RESPONSIVE UI */
-/* ============================= */
-
-@media (max-width: 1024px) {
-  section {
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-  }
-
-  .hero-image-wrapper {
-    width: 280px;
-    height: 280px;
-  }
-
-  .orbit-ring {
-    width: 260px;
-    height: 260px;
-  }
-
-  .glow-ring {
-    width: 230px;
-    height: 230px;
-  }
-
-  .orbit-dot-container {
-    width: 260px;
-    height: 260px;
-  }
-
-  .profile-image {
-    width: 200px;
-    height: 200px;
-  }
-
-  .hero-title {
-    font-size: 3.5rem !important;
-  }
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-  /* Navbar */
-  nav {
-    padding: 20px 24px !important;
-  }
-
-  nav div {
-    gap: 18px !important;
-    font-size: 0.95rem !important;
-  }
-
-  /* Hero Section */
-  #home {
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 100px 24px 60px !important;
-    gap: 40px !important;
-  }
-
-  #home > div:first-child {
-    width: 100%;
-    text-align: center !important;
-  }
-
-  .hero-title {
-    font-size: 2.7rem !important;
-    line-height: 1.1 !important;
-    min-height: auto !important;
-  }
-
-  .hero-image-wrapper {
-    width: 240px;
-    height: 240px;
-  }
-
-  .orbit-ring {
-    width: 220px;
-    height: 220px;
-  }
-
-  .glow-ring {
-    width: 200px;
-    height: 200px;
-  }
-
-  .orbit-dot-container {
-    width: 220px;
-    height: 220px;
-  }
-
-  .profile-image {
-    width: 180px;
-    height: 180px;
-  }
-
-  /* Buttons */
-  #home button {
-    width: 100%;
-    max-width: 240px;
-  }
-
-  #home div[style*="gap: 20px"] {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  /* Skills / Hobbies / Cards */
-  .card-grid,
-  .skills-grid,
-  .projects-grid {
-    grid-template-columns: 1fr !important;
-    gap: 18px !important;
-  }
-
-  /* Footer */
-  footer > div {
-    flex-direction: column !important;
-    gap: 40px !important;
-  }
-
-  footer iframe {
-    height: 240px !important;
-  }
-}
-
-/* ================= EXTRA SMALL ================= */
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.2rem !important;
-  }
-
-  .profile-image {
-    width: 160px;
-    height: 160px;
-  }
-
-  .hero-image-wrapper {
-    width: 210px;
-    height: 210px;
-  }
-
-  .orbit-ring {
-    width: 190px;
-    height: 190px;
-  }
-
-  .glow-ring {
-    width: 170px;
-    height: 170px;
-  }
-
-  .orbit-dot-container {
-    width: 190px;
-    height: 190px;
-  }
-
-  footer {
-    padding: 50px 20px 20px !important;
-  }
-}
-
-
-/* ================= NAVBAR ================= */
-
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -398,7 +213,6 @@ body {
   top: 0;
   z-index: 1000;
   background: rgba(3, 7, 18, 0.9);
-  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   box-sizing: border-box;
 }
@@ -423,7 +237,6 @@ body {
   text-shadow: 0 0 12px cyan;
 }
 
-/* Hamburger hidden on desktop */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -431,15 +244,12 @@ body {
   cursor: pointer;
 }
 
-/* Mobile menu drawer */
 .mobile-menu {
   position: fixed;
   top: 70px;
   right: -100%;
   width: 220px;
-  height: auto;
   background: rgba(3, 7, 18, 0.98);
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 30px 20px;
   display: flex;
@@ -447,15 +257,42 @@ body {
   gap: 20px;
   transition: right 0.35s ease;
   border-left: 1px solid rgba(0, 255, 255, 0.2);
-  box-shadow: -5px 0 20px rgba(0, 255, 255, 0.08);
 }
 
 .mobile-menu.open {
   right: 0;
 }
 
-/* ================= MOBILE NAV ================= */
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  section {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
 
+  .hero-image-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .orbit-ring,
+  .orbit-dot-container {
+    width: 260px;
+    height: 260px;
+  }
+
+  .glow-ring {
+    width: 230px;
+    height: 230px;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -466,6 +303,91 @@ body {
   }
 
   .navbar {
-    padding: 20px 24px;
+    padding: 18px 20px;
+  }
+
+  .mobile-menu {
+    width: 200px;
+    top: 65px;
+  }
+
+  #home {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 100px 20px 60px !important;
+    gap: 40px !important;
+  }
+
+  .hero-title {
+    font-size: 2.6rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero-image-wrapper {
+    width: 230px;
+    height: 230px;
+  }
+
+  .orbit-ring,
+  .orbit-dot-container {
+    width: 210px;
+    height: 210px;
+  }
+
+  .glow-ring {
+    width: 190px;
+    height: 190px;
+  }
+
+  .profile-image {
+    width: 170px;
+    height: 170px;
+  }
+
+  .hobby-tile {
+    min-width: 220px;
+  }
+
+  .hobby-tile:hover {
+    min-width: 220px;
+    transform: none;
+  }
+
+  .scroll-btn {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ================= EXTRA SMALL ================= */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.1rem !important;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero-image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .orbit-ring,
+  .orbit-dot-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  .glow-ring {
+    width: 160px;
+    height: 160px;
+  }
+
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }
