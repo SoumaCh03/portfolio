@@ -49,11 +49,13 @@ export default function Hobbies() {
     });
   };
 
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <section
       id="hobbies"
       style={{
-        padding: "100px 80px",
+        padding: isMobile ? "80px 20px" : "100px 80px",
         background: "#030712",
         color: "white",
         position: "relative",
@@ -61,7 +63,7 @@ export default function Hobbies() {
     >
       <h2
         style={{
-          fontSize: "2.5rem",
+          fontSize: isMobile ? "2rem" : "2.5rem",
           marginBottom: "40px",
           textAlign: "center",
         }}

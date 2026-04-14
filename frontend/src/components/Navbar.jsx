@@ -19,6 +19,7 @@ export default function Navbar() {
       <div
         className="hamburger"
         onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
       >
         ☰
       </div>
