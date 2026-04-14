@@ -57,9 +57,9 @@ export default function About() {
           opacity: 0.85,
         }}
       >
-        Software developer focused on building scalable, efficient and
-        production-ready digital systems with clean architecture,
-        modern backend solutions and AI-powered workflows.
+        Full stack software developer specializing in scalable backend systems, 
+        API engineering, and AI-powered workflows, focused on delivering clean, 
+        high-performance, production-ready digital solutions.
       </p>
 
       <div

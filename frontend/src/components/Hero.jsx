@@ -84,7 +84,7 @@ export default function Hero() {
             marginBottom: "50px",
           }}
         >
-          Full Stack Developer & Tech Innovator
+          Backend Engineering | Scalable Systems | AI Solutions
         </p>
 
         {/* BUTTONS UPDATED */}
@@ -161,7 +161,7 @@ export default function Hero() {
 
         <img
           src="/profile.JPG"
-          alt="Saumyadeep"
+          alt="Saumyadeep Chakraborty full stack developer portrait"
           className="profile-image"
         />
       </div>
