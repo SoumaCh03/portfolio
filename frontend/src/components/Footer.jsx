@@ -1,4 +1,6 @@
 export default function Footer() {
+  const isMobile = window.innerWidth <= 768;
+
   const socialStyle = {
     width: "56px",
     height: "56px",
@@ -26,35 +28,39 @@ export default function Footer() {
       style={{
         background: "#030712",
         color: "#E8F4FF",
-        padding: "70px 60px 25px",
+        padding: isMobile ? "60px 20px 25px" : "70px 60px 25px",
         fontFamily: "Arial",
+        overflowX: "hidden",
       }}
     >
       <div
         style={{
           display: "flex",
+          flexDirection: isMobile ? "column" : "row",
           justifyContent: "space-between",
           alignItems: "flex-start",
-          gap: "50px",
+          gap: isMobile ? "40px" : "50px",
           flexWrap: "wrap",
         }}
       >
         {/* LEFT SIDE SOCIALS */}
         <div
           style={{
-                flex: 1,
-                minWidth: "300px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                minHeight: "300px",
-              }}
->
+            flex: 1,
+            minWidth: isMobile ? "100%" : "300px",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            minHeight: isMobile ? "auto" : "300px",
+          }}
+        >
           <h3
             style={{
               marginBottom: "28px",
-              fontSize: "2rem",
+              fontSize: isMobile ? "1.8rem" : "2rem",
               fontWeight: "700",
+              textAlign: isMobile ? "center" : "left",
             }}
           >
             Connect With Me
@@ -65,6 +71,7 @@ export default function Footer() {
               display: "flex",
               gap: "20px",
               flexWrap: "wrap",
+              justifyContent: isMobile ? "center" : "flex-start",
             }}
           >
             {/* GitHub */}
@@ -131,7 +138,6 @@ export default function Footer() {
                 <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5zm0 7A2.5 2.5 0 1114.5 12 2.5 2.5 0 0112 14.5zm4.75-7.75a1 1 0 101 1 1 1 0 00-1-1z" />
               </svg>
             </a>
-
             {/* LinkedIn */}
             <a href="https://www.linkedin.com/in/saumyadeep-c-34342a177/" 
             target="_blank"
@@ -157,11 +163,18 @@ export default function Footer() {
         </div>
 
         {/* RIGHT SIDE MAP */}
-        <div style={{ flex: 1.2, minWidth: "420px" }}>
+        <div
+          style={{
+            flex: 1.2,
+            width: "100%",
+            minWidth: isMobile ? "100%" : "420px",
+            maxWidth: "100%",
+          }}
+        >
           <h3
             style={{
               marginBottom: "20px",
-              fontSize: "2rem",
+              fontSize: isMobile ? "1.8rem" : "2rem",
               fontWeight: "700",
               textAlign: "center",
             }}
@@ -172,6 +185,7 @@ export default function Footer() {
           <div
             style={{
               width: "100%",
+              maxWidth: "100%",
               borderRadius: "16px",
               overflow: "hidden",
               boxShadow: "0 0 20px rgba(0,255,255,0.1)",
@@ -181,8 +195,12 @@ export default function Footer() {
               title="location"
               src="https://www.google.com/maps?q=Cooch+Behar+West+Bengal&output=embed"
               width="100%"
-              height="300"
-              style={{ border: 0 }}
+              height={isMobile ? "260" : "300"}
+              style={{
+                border: 0,
+                display: "block",
+                width: "100%",
+              }}
               allowFullScreen=""
               loading="lazy"
             ></iframe>
@@ -195,6 +213,7 @@ export default function Footer() {
           opacity: 0.7,
           textAlign: "center",
           marginTop: "35px",
+          fontSize: isMobile ? "0.9rem" : "1rem",
         }}
       >
         © 2026 TechySaumya. All Rights Reserved.
