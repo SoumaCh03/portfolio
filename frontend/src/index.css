@@ -1,0 +1,471 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #030712;
+  font-family: Arial, sans-serif;
+  color: #e8f4ff;
+  overflow-x: hidden;
+}
+
+/* Cursor blink */
+.blinking-cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: cyan;
+  font-weight: 300;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Hero smooth transition */
+.hero-title {
+  transition: font-size 0.35s ease;
+}
+
+/* Navbar logo animation */
+@keyframes logoGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+    text-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 18px rgba(0, 255, 255, 0.3);
+  }
+}
+
+.logo-animation {
+  animation: logoGlow 1s ease forwards;
+}
+
+/* Orbit rotation */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hero image */
+.hero-image-wrapper {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit-ring {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  border-radius: 50%;
+  animation: spinSlow 8s linear infinite;
+}
+
+.glow-ring {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border: 2px solid rgba(0, 255, 255, 0.35);
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.25);
+}
+
+.orbit-dot-container {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  animation: spinSlow 8s linear infinite;
+}
+
+.orbit-dot {
+  width: 14px;
+  height: 14px;
+  background: cyan;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid cyan;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+  position: relative;
+  z-index: 10;
+}
+
+/* Hobbies section */
+
+.hobbies-scroll-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scrollbar-width: none;
+}
+
+.hobbies-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.hobby-tile {
+  min-width: 220px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  transition: all 0.35s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.hobby-tile:hover {
+  min-width: 320px;
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.25);
+  border-color: rgba(0, 255, 255, 0.4);
+}
+
+.hobby-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hobby-icon {
+  color: cyan;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.35s ease;
+}
+
+.hobby-tile:hover .hobby-icon {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* hobbies arrows */
+.hobbies-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-btn {
+  position: absolute;
+  z-index: 20;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 255, 255, 0.08);
+  color: cyan;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.35);
+  transform: scale(1.08);
+}
+
+.left-btn {
+  left: -25px;
+}
+
+.right-btn {
+  right: -25px;
+}
+
+
+/* ============================= */
+/* MOBILE + TABLET RESPONSIVE UI */
+/* ============================= */
+
+@media (max-width: 1024px) {
+  section {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .hero-image-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .orbit-ring {
+    width: 260px;
+    height: 260px;
+  }
+
+  .glow-ring {
+    width: 230px;
+    height: 230px;
+  }
+
+  .orbit-dot-container {
+    width: 260px;
+    height: 260px;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-title {
+    font-size: 3.5rem !important;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  /* Navbar */
+  nav {
+    padding: 20px 24px !important;
+  }
+
+  nav div {
+    gap: 18px !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Hero Section */
+  #home {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 100px 24px 60px !important;
+    gap: 40px !important;
+  }
+
+  #home > div:first-child {
+    width: 100%;
+    text-align: center !important;
+  }
+
+  .hero-title {
+    font-size: 2.7rem !important;
+    line-height: 1.1 !important;
+    min-height: auto !important;
+  }
+
+  .hero-image-wrapper {
+    width: 240px;
+    height: 240px;
+  }
+
+  .orbit-ring {
+    width: 220px;
+    height: 220px;
+  }
+
+  .glow-ring {
+    width: 200px;
+    height: 200px;
+  }
+
+  .orbit-dot-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* Buttons */
+  #home button {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  #home div[style*="gap: 20px"] {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Skills / Hobbies / Cards */
+  .card-grid,
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  /* Footer */
+  footer > div {
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+
+  footer iframe {
+    height: 240px !important;
+  }
+}
+
+/* ================= EXTRA SMALL ================= */
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem !important;
+  }
+
+  .profile-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-image-wrapper {
+    width: 210px;
+    height: 210px;
+  }
+
+  .orbit-ring {
+    width: 190px;
+    height: 190px;
+  }
+
+  .glow-ring {
+    width: 170px;
+    height: 170px;
+  }
+
+  .orbit-dot-container {
+    width: 190px;
+    height: 190px;
+  }
+
+  footer {
+    padding: 50px 20px 20px !important;
+  }
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(3, 7, 18, 0.9);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.nav-links a,
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.mobile-menu a:hover {
+  color: cyan;
+  text-shadow: 0 0 12px cyan;
+}
+
+/* Hamburger hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile menu drawer */
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  right: -100%;
+  width: 220px;
+  height: auto;
+  background: rgba(3, 7, 18, 0.98);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.35s ease;
+  border-left: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: -5px 0 20px rgba(0, 255, 255, 0.08);
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+/* ================= MOBILE NAV ================= */
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    padding: 20px 24px;
+  }
+}
