@@ -97,8 +97,9 @@ export default function Footer() {
             </a>
 
             {/* Facebook */}
-            <a href="https://facebook.com/" 
-            target="_blank"
+            <a
+              href="https://facebook.com/"
+              target="_blank"
               rel="noreferrer"
               style={socialStyle}
               onMouseEnter={(e) => {
@@ -111,16 +112,16 @@ export default function Footer() {
                   "0 0 12px rgba(0,255,255,0.08)";
                 e.currentTarget.style.transform = "scale(1)";
               }}
-              >
-              
+            >
               <svg viewBox="0 0 24 24" style={iconStyle}>
                 <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.47H15.2c-1.24 0-1.62.77-1.62 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0022 12z" />
               </svg>
             </a>
 
             {/* Instagram */}
-            <a href="https://instagram.com/" 
-            target="_blank"
+            <a
+              href="https://instagram.com/"
+              target="_blank"
               rel="noreferrer"
               style={socialStyle}
               onMouseEnter={(e) => {
@@ -138,9 +139,11 @@ export default function Footer() {
                 <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zm-5 3.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5zm0 7A2.5 2.5 0 1114.5 12 2.5 2.5 0 0112 14.5zm4.75-7.75a1 1 0 101 1 1 1 0 00-1-1z" />
               </svg>
             </a>
+
             {/* LinkedIn */}
-            <a href="https://www.linkedin.com/in/saumyadeep-c-34342a177/" 
-            target="_blank"
+            <a
+              href="https://www.linkedin.com/in/saumyadeep-c-34342a177/"
+              target="_blank"
               rel="noreferrer"
               style={socialStyle}
               onMouseEnter={(e) => {
@@ -153,8 +156,7 @@ export default function Footer() {
                   "0 0 12px rgba(0,255,255,0.08)";
                 e.currentTarget.style.transform = "scale(1)";
               }}
-              >
-
+            >
               <svg viewBox="0 0 24 24" style={iconStyle}>
                 <path d="M4.98 3.5A2.48 2.48 0 102.5 5.98 2.48 2.48 0 004.98 3.5zM3 8h4v13H3zm7 0h3.8v1.8h.05a4.17 4.17 0 013.75-2.05c4 0 4.75 2.63 4.75 6.05V21h-4v-6.3c0-1.5 0-3.42-2.08-3.42s-2.4 1.62-2.4 3.3V21h-4z" />
               </svg>
@@ -217,6 +219,19 @@ export default function Footer() {
         }}
       >
         © 2026 TechySaumya. All Rights Reserved.
+      </p>
+
+      {/* Added requested best viewed line only */}
+      <p
+        style={{
+          opacity: 0.55,
+          textAlign: "center",
+          marginTop: "10px",
+          fontSize: isMobile ? "0.75rem" : "0.85rem",
+          letterSpacing: "0.5px",
+        }}
+      >
+        Best viewed on modern desktop & mobile browsers (i.e.; Chrome, Edge, Firefox, Safari) at 1920p × 1080p and above.
       </p>
     </footer>
   );
