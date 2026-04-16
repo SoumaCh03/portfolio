@@ -56,6 +56,8 @@
   }
 }
 
+
+
 #center {
   display: flex;
   flex-direction: column;
@@ -182,3 +184,5 @@
     border-right-color: var(--border);
   }
 }
+
+
