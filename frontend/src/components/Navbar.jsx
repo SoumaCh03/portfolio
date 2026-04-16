@@ -52,10 +52,24 @@ export default function Navbar() {
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           type="button"
+          style={{
+            background: "transparent",
+            border: "none",
+            outline: "none",
+            boxShadow: "none",
+            padding: 0,
+            margin: 0,
+            appearance: "none",
+            WebkitAppearance: "none",
+            fontSize: "2rem",
+            color: "#ffffff",
+            cursor: "pointer",
+          }}
         >
           ☰
         </button>
 
+        
         {/* Mobile slide menu */}
         <div
           id="mobile-menu"
