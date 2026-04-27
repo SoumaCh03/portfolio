@@ -13,6 +13,7 @@ const hobbies = [
   {
     title: "ShutterBug",
     icon: <Camera size={34} />,
+    link: "https://snappysaumya.vercel.app", // ✅ added
   },
   {
     title: "Wanderlust",
@@ -79,7 +80,23 @@ export default function Hobbies() {
         <div className="hobbies-scroll-container" ref={scrollRef}>
           {hobbies.map((hobby, index) => (
             <div className="hobby-tile" key={index}>
-              <div className="hobby-title">{hobby.title}</div>
+              <div className="hobby-title">
+                {hobby.link ? (
+                  <a
+                    href={hobby.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "inherit",
+                      textDecoration: "none",
+                    }}
+                  >
+                    {hobby.title}
+                  </a>
+                ) : (
+                  hobby.title
+                )}
+              </div>
               <div className="hobby-icon">{hobby.icon}</div>
             </div>
           ))}

@@ -162,7 +162,42 @@ export default function Footer() {
               </svg>
             </a>
           </div>
+
+          {/* 🔥 SnappySaumya Link (Added) */}
+<div
+  style={{
+    marginTop: "18px",
+    textAlign: isMobile ? "center" : "left",
+  }}
+>
+  <a
+    href="https://snappysaumya.vercel.app"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      fontSize: "14px",
+      color: "#67e8f9",
+      textDecoration: "none",
+      letterSpacing: "0.5px",
+      transition: "all 0.3s ease",
+      display: "inline-block",
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.textShadow =
+        "0 0 12px rgba(0,255,255,0.7)";
+      e.currentTarget.style.transform = "translateY(-2px)";
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.textShadow = "none";
+      e.currentTarget.style.transform = "translateY(0)";
+    }}
+  >
+    📸 Explore My Photography (SnappySaumya)
+  </a>
+</div>
         </div>
+
+        
 
         {/* RIGHT SIDE MAP */}
         <div
@@ -231,7 +266,8 @@ export default function Footer() {
           letterSpacing: "0.5px",
         }}
       >
-        Best viewed on modern desktop & mobile browsers (i.e.; Chrome, Edge, Firefox, Safari) at 1920p × 1080p and above.
+        Best viewed on modern desktop & mobile browsers 
+        (i.e.; Chrome, Edge, Firefox, Safari) at 1920p × 1080p and above.
       </p>
     </footer>
   );
