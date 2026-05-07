@@ -88,9 +88,9 @@ export default function Skills() {
     <section
       id="skills"
       style={{
-        minHeight: "100vh",
+        height: "auto",
         background: "#0b1220",
-        padding: "100px 60px",
+        padding: "90px 60px 70px",
         color: "#E8F4FF",
         fontFamily: "Arial",
       }}

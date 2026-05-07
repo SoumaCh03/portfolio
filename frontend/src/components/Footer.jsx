@@ -98,7 +98,7 @@ export default function Footer() {
 
             {/* Facebook */}
             <a
-              href="https://facebook.com/"
+              href="https://www.facebook.com/SaumyanaCh03/"
               target="_blank"
               rel="noreferrer"
               style={socialStyle}
@@ -161,43 +161,63 @@ export default function Footer() {
                 <path d="M4.98 3.5A2.48 2.48 0 102.5 5.98 2.48 2.48 0 004.98 3.5zM3 8h4v13H3zm7 0h3.8v1.8h.05a4.17 4.17 0 013.75-2.05c4 0 4.75 2.63 4.75 6.05V21h-4v-6.3c0-1.5 0-3.42-2.08-3.42s-2.4 1.62-2.4 3.3V21h-4z" />
               </svg>
             </a>
+
+            {/* X / Twitter */}
+            <a
+              href="https://x.com/ImSaumyaCh"
+              target="_blank"
+              rel="noreferrer"
+              style={socialStyle}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 0 25px rgba(0,255,255,0.45)";
+                e.currentTarget.style.transform = "scale(1.08)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 0 12px rgba(0,255,255,0.08)";
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+            >
+              <svg viewBox="0 0 24 24" style={iconStyle}>
+                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.847h-7.406l-5.8-7.584-6.639 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.404z" />
+              </svg>
+            </a>
           </div>
 
-          {/* 🔥 SnappySaumya Link (Added) */}
-<div
-  style={{
-    marginTop: "18px",
-    textAlign: isMobile ? "center" : "left",
-  }}
->
-  <a
-    href="https://snappysaumya.vercel.app"
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{
-      fontSize: "14px",
-      color: "#67e8f9",
-      textDecoration: "none",
-      letterSpacing: "0.5px",
-      transition: "all 0.3s ease",
-      display: "inline-block",
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.textShadow =
-        "0 0 12px rgba(0,255,255,0.7)";
-      e.currentTarget.style.transform = "translateY(-2px)";
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.textShadow = "none";
-      e.currentTarget.style.transform = "translateY(0)";
-    }}
-  >
-    📸 Explore My Photography (SnappySaumya)
-  </a>
-</div>
+          {/* SnappySaumya Link */}
+          <div
+            style={{
+              marginTop: "18px",
+              textAlign: isMobile ? "center" : "left",
+            }}
+          >
+            <a
+              href="https://snappysaumya.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: "14px",
+                color: "#67e8f9",
+                textDecoration: "none",
+                letterSpacing: "0.5px",
+                transition: "all 0.3s ease",
+                display: "inline-block",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.textShadow =
+                  "0 0 12px rgba(0,255,255,0.7)";
+                e.currentTarget.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.textShadow = "none";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              📸 Explore My Photography (SnappySaumya)
+            </a>
+          </div>
         </div>
-
-        
 
         {/* RIGHT SIDE MAP */}
         <div
@@ -247,16 +267,29 @@ export default function Footer() {
 
       <p
         style={{
-          opacity: 0.7,
+          opacity: 0.8,
           textAlign: "center",
           marginTop: "35px",
+          fontSize: isMobile ? "0.95rem" : "1rem",
+          lineHeight: "1.7",
+        }}
+      >
+        Saumyadeep Chakraborty (TechySaumya) — Full Stack Developer,
+        Backend Engineering Enthusiast, Photographer & Creative
+        Technologist based in West Bengal, India.
+      </p>
+
+      <p
+        style={{
+          opacity: 0.7,
+          textAlign: "center",
+          marginTop: "18px",
           fontSize: isMobile ? "0.9rem" : "1rem",
         }}
       >
         © 2026 TechySaumya. All Rights Reserved.
       </p>
 
-      {/* Added requested best viewed line only */}
       <p
         style={{
           opacity: 0.55,
@@ -266,8 +299,8 @@ export default function Footer() {
           letterSpacing: "0.5px",
         }}
       >
-        Best viewed on modern desktop & mobile browsers 
-        (i.e.; Chrome, Edge, Firefox, Safari) at 1920p × 1080p and above.
+        Best viewed on modern desktop & mobile browsers
+        (Chrome, Edge, Firefox, Safari) at 1920 × 1080 and above.
       </p>
     </footer>
   );

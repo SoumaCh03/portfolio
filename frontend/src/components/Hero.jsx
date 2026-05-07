@@ -45,8 +45,24 @@ export default function Hero() {
         alignItems: "center",
         padding: "40px 80px",
         textAlign: "left",
+        position: "relative",
       }}
     >
+      {/* SEO Hidden Semantic Heading */}
+      <h2
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          opacity: 0,
+          pointerEvents: "none",
+          userSelect: "none",
+        }}
+      >
+        Saumyadeep Chakraborty also known as TechySaumya — Full
+        Stack Developer, Backend Engineer, Photographer and AI
+        Enthusiast from West Bengal, India.
+      </h2>
+
       {/* LEFT CONTENT */}
       <div style={{ flex: 1 }}>
         <p
@@ -87,7 +103,7 @@ export default function Hero() {
           Backend Engineering | Scalable Systems | AI Solutions
         </p>
 
-        {/* BUTTONS UPDATED */}
+        {/* BUTTONS */}
         <div style={{ display: "flex", gap: "20px" }}>
           <a href="#projects" style={{ textDecoration: "none" }}>
             <button
@@ -160,8 +176,8 @@ export default function Hero() {
         </div>
 
         <img
-          src="/profile.JPG"
-          alt="Saumyadeep Chakraborty full stack developer portrait"
+          src="/saumyadeep-chakraborty-techysaumya-portrait.jpg"
+          alt="Saumyadeep Chakraborty also known as TechySaumya full stack developer and photographer portrait"
           className="profile-image"
         />
       </div>

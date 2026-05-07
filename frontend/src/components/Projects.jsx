@@ -40,7 +40,7 @@ export default function Projects() {
       style={{
         background: "#0b1220",
         color: "#E8F4FF",
-        padding: "100px 60px",
+        padding: "90px 60px 70px",
         fontFamily: "Arial",
       }}
     >

@@ -30,10 +30,10 @@ export default function About() {
     <section
       id="about"
       style={{
-        minHeight: "100vh",
+        height: "auto",
         background: "#07101f",
         color: "#E8F4FF",
-        padding: "100px 60px",
+        padding: "90px 60px 70px",
         fontFamily: "Arial",
       }}
     >
@@ -57,9 +57,13 @@ export default function About() {
           opacity: 0.85,
         }}
       >
-        Full stack software developer specializing in scalable backend systems, 
-        API engineering, and AI-powered workflows, focused on delivering clean, 
-        high-performance, production-ready digital solutions.
+        Hi, I’m Saumyadeep Chakraborty, also known as TechySaumya — a
+        full stack developer, backend engineering enthusiast,
+        photographer, and creative technologist from West Bengal,
+        India. I specialize in scalable backend systems, AI-powered
+        workflows, modern web applications, API engineering, and
+        performance-focused digital experiences built for reliability,
+        efficiency, and seamless user interaction.
       </p>
 
       <div
