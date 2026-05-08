@@ -80,8 +80,8 @@ export default function Contact() {
     <section
       id="contact"
       style={{
-        minHeight: "100vh",
-        background: "#030712",
+        height: "auto",
+        background: "rgba(3, 7, 18, 0.72)",
         padding: "100px 80px",
         color: "#E8F4FF",
       }}

@@ -11,7 +11,6 @@ import {
   FaJs,
   FaDatabase,
   FaRobot,
-  FaTools,
 } from "react-icons/fa";
 
 import {
@@ -89,7 +88,11 @@ export default function Skills() {
       id="skills"
       style={{
         height: "auto",
-        background: "#0b1220",
+        background:
+          "linear-gradient(180deg, rgba(7,16,31,0.82), rgba(3,7,18,0.88))",
+        backdropFilter: "blur(2px)",
+        borderTop: "1px solid rgba(0,255,255,0.05)",
+        borderBottom: "1px solid rgba(0,255,255,0.04)",
         padding: "90px 60px 70px",
         color: "#E8F4FF",
         fontFamily: "Arial",
@@ -100,6 +103,7 @@ export default function Skills() {
           textAlign: "center",
           fontSize: "3rem",
           marginBottom: "60px",
+          textShadow: "0 0 20px rgba(0,255,255,0.12)",
         }}
       >
         Skills
@@ -115,6 +119,8 @@ export default function Skills() {
               ? "repeat(2, 1fr)"
               : "repeat(3, 1fr)",
           gap: "30px",
+          maxWidth: "1400px",
+          margin: "0 auto",
         }}
       >
         {skillGroups.map((group, index) => (

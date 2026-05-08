@@ -31,7 +31,7 @@ export default function About() {
       id="about"
       style={{
         height: "auto",
-        background: "#07101f",
+        background: "rgba(7, 16, 31, 0.72)",
         color: "#E8F4FF",
         padding: "90px 60px 70px",
         fontFamily: "Arial",

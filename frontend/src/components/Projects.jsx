@@ -38,7 +38,11 @@ export default function Projects() {
     <section
       id="projects"
       style={{
-        background: "#0b1220",
+        background:
+          "linear-gradient(180deg, rgba(7,16,31,0.82), rgba(3,7,18,0.9))",
+        backdropFilter: "blur(2px)",
+        borderTop: "1px solid rgba(0,255,255,0.05)",
+        borderBottom: "1px solid rgba(0,255,255,0.04)",
         color: "#E8F4FF",
         padding: "90px 60px 70px",
         fontFamily: "Arial",
@@ -62,7 +66,9 @@ export default function Projects() {
             window.innerWidth <= 768
               ? "1fr"
               : "repeat(auto-fit, minmax(320px, 1fr))",
-                    gap: "30px",
+          gap: "30px",
+          maxWidth: "1400px",
+          margin: "0 auto",
         }}
       >
         {projects.map((project, index) => (
