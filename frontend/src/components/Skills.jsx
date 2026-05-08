@@ -25,6 +25,8 @@ import {
   SiOpenai,
   SiGoogle,
   SiHuggingface,
+  SiTypescript,
+  SiCplusplus,
 } from "react-icons/si";
 
 const skillGroups = [
@@ -32,8 +34,9 @@ const skillGroups = [
     title: "Programming Languages",
     items: [
       { name: "Python", icon: <FaPython /> },
-      { name: "Java", icon: <FaJava /> },
       { name: "JavaScript", icon: <FaJs /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "C++", icon: <SiCplusplus /> },
     ],
   },
   {
