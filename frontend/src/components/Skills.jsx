@@ -27,7 +27,24 @@ import {
   SiHuggingface,
   SiTypescript,
   SiCplusplus,
+  SiAnthropic,
+  SiGithubcopilot,
+  SiRailway,
+  SiFirebase,
+  SiDocker,
+  SiLinux,
+  SiFigma,
+  SiBruno,
+  SiHttpie,
 } from "react-icons/si";
+
+import { 
+  VscVscode 
+} from "react-icons/vsc";
+
+import { 
+  TbBolt 
+} from "react-icons/tb";
 
 const skillGroups = [
   {
@@ -64,6 +81,9 @@ const skillGroups = [
       { name: "Vercel", icon: <SiVercel /> },
       { name: "Netlify", icon: <SiNetlify /> },
       { name: "Render", icon: <FaDatabase /> },
+      { name: "Railway", icon: <SiRailway /> },
+      { name: "Firebase", icon: <SiFirebase /> },
+      { name: "Docker", icon: <SiDocker /> },
     ],
   },
   {
@@ -71,16 +91,23 @@ const skillGroups = [
     items: [
       { name: "Git", icon: <FaGitAlt /> },
       { name: "GitHub", icon: <FaGithub /> },
+      { name: "VS Code", icon: <VscVscode /> },,
       { name: "Postman", icon: <SiPostman /> },
+      { name: "Bruno", icon: <SiBruno /> },
+      { name: "Thunder Client", icon: <TbBolt /> },
+      { name: "HTTPie", icon: <SiHttpie /> },
     ],
   },
   {
     title: "AI & ML",
     items: [
       { name: "ChatGPT", icon: <SiOpenai /> },
+      { name: "Claude", icon: <SiAnthropic /> },
       { name: "Gemini", icon: <SiGoogle /> },
+      { name: "GitHub Copilot", icon: <SiGithubcopilot /> },
+      { name: "OpenAI Codex", icon: <SiOpenai /> },
       { name: "Hugging Face", icon: <SiHuggingface /> },
-      { name: "AI Tools", icon: <FaRobot /> },
+      { name: "AI Agents", icon: <FaRobot /> },
     ],
   },
 ];
