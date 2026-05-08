@@ -53,9 +53,9 @@ export default function Hero() {
         flexDirection: isMobile ? "column" : "row",
         justifyContent: "space-between",
         alignItems: "center",
-        gap: isMobile ? "50px" : "40px",
+        gap: isMobile ? "24px" : "40px",
         padding: isMobile
-          ? "110px 20px 70px"
+          ? "78px 20px 42px"
           : isTablet
           ? "90px 40px 60px"
           : "55px 80px 55px",
@@ -150,7 +150,7 @@ export default function Hero() {
             borderRadius: "999px",
             background: "rgba(255,255,255,0.03)",
             backdropFilter: "blur(10px)",
-            marginBottom: isMobile ? "18px" : "20px",
+            marginBottom: isMobile ? "14px" : "20px",
             width: "fit-content",
             boxShadow: "0 0 25px rgba(0,255,255,0.08)",
           }}
@@ -179,7 +179,7 @@ export default function Hero() {
         {/* TITLE WRAPPER */}
         <div
           style={{
-            minHeight: isMobile ? "150px" : "200px",
+            minHeight: isMobile ? "118px" : "200px",
             display: "flex",
             alignItems: "center",
             marginBottom: "18px",
@@ -191,8 +191,8 @@ export default function Hero() {
             style={{
               fontSize: isMobile
                 ? displayText === originalText
-                  ? "3rem"
-                  : "2.5rem"
+                  ? "2.6rem"
+                  : "2.15rem"
                 : isTablet
                 ? displayText === originalText
                   ? "3.8rem"
@@ -258,7 +258,7 @@ export default function Hero() {
         <div
           style={{
             display: "flex",
-            gap: isMobile ? "14px" : "20px",
+            gap: isMobile ? "12px" : "20px",
             flexWrap: "wrap",
             justifyContent: isMobile ? "center" : "flex-start",
           }}
@@ -342,7 +342,7 @@ export default function Hero() {
           position: "relative",
           zIndex: 5,
           flexShrink: 0,
-          transform: isMobile ? "scale(0.78)" : "scale(0.92)",
+          transform: isMobile ? "scale(0.72)" : "scale(0.92)",
         }}
       >
         {/* OUTER GLOW */}
