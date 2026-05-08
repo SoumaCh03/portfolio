@@ -6,9 +6,21 @@ export default function Hero() {
 
   const [displayText, setDisplayText] = useState(originalText);
   const [phase, setPhase] = useState("wait");
+  const [viewportWidth, setViewportWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200
+  );
 
-  const isMobile = window.innerWidth <= 768;
-  const isTablet = window.innerWidth <= 1024;
+  const isMobile = viewportWidth <= 768;
+  const isTablet = viewportWidth <= 1024;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     let timeout;
@@ -40,7 +52,7 @@ export default function Hero() {
     <section
       id="home"
       style={{
-        minHeight: "100vh",
+        minHeight: isMobile ? "74vh" : "90vh",
         background: `
           radial-gradient(circle at top left, rgba(0,255,255,0.18), transparent 28%),
           radial-gradient(circle at bottom right, rgba(0,140,255,0.16), transparent 30%),
@@ -51,17 +63,18 @@ export default function Hero() {
         color: "#E8F4FF",
         display: "flex",
         flexDirection: isMobile ? "column" : "row",
-        justifyContent: "space-between",
+        justifyContent: isMobile ? "flex-start" : "space-between",
         alignItems: "center",
-        gap: isMobile ? "24px" : "40px",
+        gap: isMobile ? "12px" : "40px",
         padding: isMobile
-          ? "78px 20px 42px"
+          ? "calc(env(safe-area-inset-top, 0px) + 82px) 20px 30px"
           : isTablet
           ? "90px 40px 60px"
-          : "55px 80px 55px",
+          : "55px 65px 55px",
         textAlign: isMobile ? "center" : "left",
         position: "relative",
         overflow: "hidden",
+        scrollMarginTop: isMobile ? "96px" : "0px",
       }}
     >
       {/* HERO GLOW */}
@@ -120,9 +133,9 @@ export default function Hero() {
           opacity: 0,
         }}
       >
-        Saumyadeep Chakraborty also known as TechySaumya — Full
-        Stack Developer, Backend Engineer, Photographer and AI
-        Enthusiast from West Bengal, India.
+        Saumyadeep Chakraborty also known as TechySaumya — Full Stack Developer,
+        Backend Engineer, Photographer and AI Enthusiast from West Bengal,
+        India.
       </h2>
 
       {/* LEFT CONTENT */}
@@ -150,7 +163,7 @@ export default function Hero() {
             borderRadius: "999px",
             background: "rgba(255,255,255,0.03)",
             backdropFilter: "blur(10px)",
-            marginBottom: isMobile ? "14px" : "20px",
+            marginBottom: isMobile ? "10px" : "20px",
             width: "fit-content",
             boxShadow: "0 0 25px rgba(0,255,255,0.08)",
           }}
@@ -179,7 +192,7 @@ export default function Hero() {
         {/* TITLE WRAPPER */}
         <div
           style={{
-            minHeight: isMobile ? "118px" : "200px",
+            minHeight: isMobile ? "82px" : "200px",
             display: "flex",
             alignItems: "center",
             marginBottom: "18px",
@@ -191,8 +204,8 @@ export default function Hero() {
             style={{
               fontSize: isMobile
                 ? displayText === originalText
-                  ? "2.6rem"
-                  : "2.15rem"
+                  ? "2.2rem"
+                  : "1.9rem"
                 : isTablet
                 ? displayText === originalText
                   ? "3.8rem"
@@ -201,17 +214,11 @@ export default function Hero() {
                 ? "4.5rem"
                 : "4.1rem",
 
-              lineHeight:
-                displayText === originalText ? "0.92" : "0.96",
-
+              lineHeight: displayText === originalText ? "0.92" : "0.96",
               margin: 0,
-
               color: "#ffffff",
-
               fontWeight: "900",
-
-              letterSpacing:
-                displayText === originalText ? "-3px" : "-2px",
+              letterSpacing: displayText === originalText ? "-3px" : "-2px",
 
               textShadow: `
                 0 0 10px rgba(255,255,255,0.08),
@@ -220,15 +227,10 @@ export default function Hero() {
               `,
 
               transition: "all 0.35s ease",
-
               width: "100%",
-
               whiteSpace: "pre-line",
-
               wordBreak: "break-word",
-
               overflowWrap: "break-word",
-
               maxWidth: "100%",
             }}
           >
@@ -243,7 +245,7 @@ export default function Hero() {
             fontSize: isMobile ? "0.95rem" : "1.05rem",
             opacity: 0.88,
             marginTop: "0",
-            marginBottom: "32px",
+            marginBottom: "22px",
             maxWidth: "760px",
             lineHeight: isMobile ? "1.7" : "1.8",
             color: "rgba(232,244,255,0.88)",
@@ -258,7 +260,7 @@ export default function Hero() {
         <div
           style={{
             display: "flex",
-            gap: isMobile ? "12px" : "20px",
+            gap: isMobile ? "10px" : "20px",
             flexWrap: "wrap",
             justifyContent: isMobile ? "center" : "flex-start",
           }}
@@ -267,29 +269,23 @@ export default function Hero() {
             <button
               style={{
                 padding: isMobile ? "14px 24px" : "16px 34px",
-                background:
-                  "linear-gradient(135deg, #00FFFF, #00B7FF)",
+                background: "linear-gradient(135deg, #00FFFF, #00B7FF)",
                 color: "#030712",
                 border: "none",
                 borderRadius: "14px",
                 fontWeight: "bold",
                 fontSize: isMobile ? "0.92rem" : "1rem",
                 cursor: "pointer",
-                boxShadow:
-                  "0 0 35px rgba(0,255,255,0.35)",
+                boxShadow: "0 0 35px rgba(0,255,255,0.35)",
                 transition: "all 0.35s ease",
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow =
-                  "0 0 45px rgba(0,255,255,0.85)";
-                e.target.style.transform =
-                  "translateY(-4px) scale(1.03)";
+                e.target.style.boxShadow = "0 0 45px rgba(0,255,255,0.85)";
+                e.target.style.transform = "translateY(-4px) scale(1.03)";
               }}
               onMouseLeave={(e) => {
-                e.target.style.boxShadow =
-                  "0 0 35px rgba(0,255,255,0.35)";
-                e.target.style.transform =
-                  "translateY(0) scale(1)";
+                e.target.style.boxShadow = "0 0 35px rgba(0,255,255,0.35)";
+                e.target.style.transform = "translateY(0) scale(1)";
               }}
             >
               View Projects
@@ -308,25 +304,19 @@ export default function Hero() {
                 fontSize: isMobile ? "0.92rem" : "1rem",
                 cursor: "pointer",
                 transition: "all 0.35s ease",
-                boxShadow:
-                  "0 0 20px rgba(255,255,255,0.04)",
+                boxShadow: "0 0 20px rgba(255,255,255,0.04)",
               }}
               onMouseEnter={(e) => {
-                e.target.style.boxShadow =
-                  "0 0 30px rgba(0,255,255,0.18)";
+                e.target.style.boxShadow = "0 0 30px rgba(0,255,255,0.18)";
                 e.target.style.borderColor = "#00FFFF";
                 e.target.style.color = "#00FFFF";
-                e.target.style.transform =
-                  "translateY(-4px)";
+                e.target.style.transform = "translateY(-4px)";
               }}
               onMouseLeave={(e) => {
-                e.target.style.boxShadow =
-                  "0 0 20px rgba(255,255,255,0.04)";
-                e.target.style.borderColor =
-                  "rgba(255,255,255,0.18)";
+                e.target.style.boxShadow = "0 0 20px rgba(255,255,255,0.04)";
+                e.target.style.borderColor = "rgba(255,255,255,0.18)";
                 e.target.style.color = "#E8F4FF";
-                e.target.style.transform =
-                  "translateY(0)";
+                e.target.style.transform = "translateY(0)";
               }}
             >
               Contact Me
@@ -342,7 +332,7 @@ export default function Hero() {
           position: "relative",
           zIndex: 5,
           flexShrink: 0,
-          transform: isMobile ? "scale(0.72)" : "scale(0.92)",
+          transform: isMobile ? "scale(0.62)" : "scale(0.92)",
         }}
       >
         {/* OUTER GLOW */}
@@ -427,4 +417,3 @@ export default function Hero() {
     </section>
   );
 }
-

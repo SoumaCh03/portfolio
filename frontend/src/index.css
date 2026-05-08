@@ -604,34 +604,35 @@ section {
   }
 
   .navbar {
-    padding: 14px 20px;
+    padding: 10px 18px;
+    min-height: 72px;
   }
 
   .navbar h1 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
   }
 
   .mobile-menu {
     width: 180px;
-    top: 64px;
+    top: 72px;
     right: -100%;
   }
 
   #home {
     flex-direction: column !important;
     text-align: center !important;
-    padding: 120px 20px 60px !important;
-    gap: 40px !important;
+    padding: calc(96px + env(safe-area-inset-top, 0px)) 20px 34px !important;
+    gap: 16px !important;
   }
 
   .hero-title {
-    font-size: 2.6rem !important;
+    font-size: 2.2rem !important;
     line-height: 1.1 !important;
   }
 
   .hero-image-wrapper {
-    width: 230px;
-    height: 230px;
+    width: 215px;
+    height: 215px;
   }
 
   .orbit-ring,
@@ -646,8 +647,8 @@ section {
   }
 
   .profile-image {
-    width: 170px;
-    height: 170px;
+    width: 158px;
+    height: 158px;
   }
 
   .hobbies-wrapper {
@@ -680,6 +681,10 @@ section {
 /* ================= EXTRA SMALL ================= */
 
 @media (max-width: 480px) {
+  #home {
+    padding-top: calc(104px + env(safe-area-inset-top, 0px)) !important;
+  }
+
   .hero-title {
     font-size: 2.1rem !important;
   }
