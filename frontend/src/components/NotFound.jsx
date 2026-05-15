@@ -31,9 +31,9 @@ const NotFound = () => {
           </div>
           
         </div>
-        <div className="foot">
+        <div className="foot" style={{ marginTop: "2rem", textAlign: "center", fontSize: "0.875rem", color: "#888" }}>
             <p>
-                TechySaumya &copy; {new Date().getFullYear()}. / 404 Not Found.
+                TechySaumya &copy; {new Date().getFullYear()}. <span style={{ marginLeft: "0.5rem", color: "red" }}>/  404 Not Found.</span> 
             </p>
         </div>
       </div>
