@@ -29,6 +29,12 @@ const NotFound = () => {
               View Projects
             </a>
           </div>
+          
+        </div>
+        <div className="foot">
+            <p>
+                TechySaumya &copy; {new Date().getFullYear()}. / 404 Not Found.
+            </p>
         </div>
       </div>
     </section>
@@ -36,3 +42,4 @@ const NotFound = () => {
 };
 
 export default NotFound;
+
