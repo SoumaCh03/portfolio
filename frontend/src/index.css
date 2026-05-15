@@ -818,3 +818,257 @@ section {
   position: relative;
   z-index: 2;
 }
+
+/* =========================================================
+   TECHYSAUMYA 404 PAGE
+========================================================= */
+
+.notfound-section {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px 20px 30px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(0,255,255,0.07),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(255,80,120,0.06),
+      transparent 22%
+    ),
+    linear-gradient(
+      to bottom,
+      #02040b 0%,
+      #030712 45%,
+      #06101f 100%
+    );
+}
+
+.notfound-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0,255,255,0.10) 1px, transparent 1px);
+
+  background-size: 220px 220px, 260px 260px;
+
+  opacity: 0.4;
+}
+
+.notfound-container {
+  position: relative;
+  z-index: 10;
+
+  width: 100%;
+  max-width: 620px;
+
+  text-align: center;
+}
+
+.error-code {
+  margin: 0;
+
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 0.9;
+  font-weight: 900;
+
+  letter-spacing: -2px;
+
+  background: linear-gradient(
+    135deg,
+    #00f5ff,
+    #59d6ff,
+    #91b9ff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(
+    0 0 25px rgba(0,255,255,0.16)
+  );
+}
+
+.glass-card {
+  margin-top: 10px;
+  margin-inline: auto;
+
+  max-width: 620px;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(0,255,255,0.10);
+
+  border-radius: 24px;
+
+  padding: 2rem 1.8rem;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 0 35px rgba(0,255,255,0.05),
+    inset 0 0 20px rgba(255,255,255,0.015);
+}
+
+.glass-card h2 {
+  margin: 0 0 16px;
+
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 800;
+
+  color: #e8f4ff;
+}
+
+.glass-card p {
+  margin: 0 auto;
+
+  max-width: 500px;
+
+  font-size: 0.98rem;
+  line-height: 1.8;
+
+  color:
+    rgba(232,244,255,0.72);
+}
+
+.button-group {
+  margin-top: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+.home-btn,
+.project-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-width: 190px;
+  height: 52px;
+
+  border-radius: 16px;
+
+  font-size: 0.96rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.home-btn {
+  color: #021018;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00f5ff,
+      #44c8ff
+    );
+
+  box-shadow:
+    0 0 20px rgba(0,255,255,0.16);
+}
+
+.home-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 28px rgba(0,255,255,0.28);
+}
+
+.project-btn {
+  color: #e8f4ff;
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(0,255,255,0.14);
+}
+
+.project-btn:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(0,255,255,0.28);
+
+  box-shadow:
+    0 0 18px rgba(0,255,255,0.10);
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+  .notfound-section {
+    padding: 50px 20px 25px;
+  }
+
+  .glass-card {
+    padding: 1.8rem 1.5rem;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .notfound-section {
+    padding:
+      calc(50px + env(safe-area-inset-top, 0px))
+      18px
+      20px;
+  }
+
+  .error-code {
+    font-size: clamp(3.5rem, 18vw, 5rem);
+  }
+
+  .glass-card {
+    padding: 1.5rem 1.2rem;
+    border-radius: 20px;
+  }
+
+  .glass-card h2 {
+    margin-bottom: 12px;
+    font-size: 1.9rem;
+  }
+
+  .glass-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home-btn,
+  .project-btn {
+    width: 100%;
+    min-width: unset;
+    height: 50px;
+  }
+}
