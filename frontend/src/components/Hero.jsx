@@ -398,7 +398,7 @@ export default function Hero() {
               style={{
                 position: "absolute",
                 bottom: "14%",
-                left: "-16%",
+                left: "-20%",
                 padding: "10px 16px",
                 borderRadius: "14px",
                 background: "rgba(255,255,255,0.04)",
